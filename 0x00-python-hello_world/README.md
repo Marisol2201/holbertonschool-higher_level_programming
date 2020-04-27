@@ -2,6 +2,8 @@
 
 **Mandatory**
 
+- Run Python file:
+  - Shell script that runs a Python script.
 - Run inline:
   - Shell script that runs Python code.
 - Hello, print:
