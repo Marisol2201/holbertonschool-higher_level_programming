@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
-    if sentence is None:
+    length = len(sentence)
+    if (sentence is None) or (length is None):
             return
-    return(len(sentence), sentence[0])
+    for letter in sentence:
+        return(length, letter)
