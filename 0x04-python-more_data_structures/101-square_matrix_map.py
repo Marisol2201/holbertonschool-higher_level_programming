@@ -1,4 +1,6 @@
 #!/usr/bin/python3
 def square_matrix_map(matrix=[]):
-    new = [list(map(lambda x: x * x, row)) for row in matrix]
-    return new
+    '''
+    The original argument is not modified
+    '''
+    return list(map(lambda row: (list(map(lambda x: x * x, row))), matrix))
