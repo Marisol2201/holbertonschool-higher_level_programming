@@ -1,0 +1,25 @@
+3-say_my_name.txt
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test 1: 1 argument int
+    >>> say_my_name(4)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test 2: correct arguments
+    >>> say_my_name("Marisol", "Ramirez")
+    My name is Marisol Ramirez
+
+Test 3: casting to str
+    >>> say_my_name(str(242443243), "White")
+    My name is 242443243 White
+
+Test 4: last name integer 
+    >>> say_my_name("John", 1)
+    Traceback (most recent call last):
+	...
+    TypeError: last_name must be a string
+
+

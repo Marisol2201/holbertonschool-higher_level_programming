@@ -1,0 +1,47 @@
+5-text_indentation.txt
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test 1: text with characters(".", ":", "?")
+    >>> text_indentation("Hello. Holberton? School:")
+    Hello.
+    <BLANKLINE>
+    Holberton?
+    <BLANKLINE>
+    School:
+    <BLANKLINE>
+
+Test 2: text is a number
+    >>> text_indentation(12)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Test 3: text without characters(".", ":", "?")
+    >>> text_indentation("Hello!")
+    Hello!
+
+Test 4: text without characters and 1 space
+    >>> text_indentation("Hello! Holberton")
+    Hello! Holberton
+
+Test 5: text with \n at the end
+    >>> text_indentation("Hello\n")
+    Hello
+
+Test 6: text with \n\n at the end
+    >>> text_indentation("Hello.Holberton\n\n")
+    Hello.
+    <BLANKLINE>
+    Holberton
+    <BLANKLINE>
+
+Test 7: text with \n inside a string
+    >>> text_indentation("\n\n")
+    <BLANKLINE>
+    <BLANKLINE>
+
+Test 8: text with \n and """
+    >>> text_indentation("""\n\n""")
+    <BLANKLINE>
+    <BLANKLINE>

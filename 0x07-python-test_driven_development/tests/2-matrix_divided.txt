@@ -1,0 +1,76 @@
+2-matrix_divided.txt    
+	
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test 1: correct list
+    >>> matrix_divided([[1,2,3], [4,5,6]], 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Test 2: mixed integers and floats
+    >>> matrix_divided( [[1.1,2.2,3], [4,5,6.3]], 3)
+    [[0.37, 0.73, 1.0], [1.33, 1.67, 2.1]]
+
+Test 3: different size
+    >>> matrix_divided([[2,3], [4,5,6]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+Test 4: matrix of 1 row
+    >>> print(matrix_divided([[1, 2, 0]], 2))
+    [[0.5, 1.0, 0.0]]
+
+Test 5: None arguments
+    >>> print(matrix_divided(None, None))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test 6: negative int and div float
+    >>> print(matrix_divided([[-1, -100]], 2.9))
+    [[-0.34, -34.48]]
+
+Test 7: empty rows
+    >>> print(matrix_divided([[], []], 2))
+    [[], []]
+
+Test 8: empty matrix
+    >>> print(matrix_divided([[]], 2))
+    [[]]
+
+Test 9: division by zero
+    >>> print(matrix_divided([[1, 2], [2, 3]], 0))
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+Test 10: matrix with strings
+    >>> matrix_divided([["Hello",2], [4,"World"]], 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test 11: divisor None
+    >>> matrix_divided([[2, 4], [5, 5]], None)
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+Test 12: without divisor
+    >>> matrix_divided([[2, 4], [5, 6]],)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Test 13: divisor overflow
+    >>> matrix_divided([[1, 2], [3,4]], float('inf'))
+    [[0.0, 0.0], [0.0, 0.0]]
+
+Test 14: divisor str
+    >>> matrix_divided([[2, 4], [5, 5]], "Holberton")
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+Test 15: 0 like paramater
+    >>> matrix_divided([[1,2,0], [4,0,6]], 3)
+    [[0.33, 0.67, 0.0], [1.33, 0.0, 2.0]]

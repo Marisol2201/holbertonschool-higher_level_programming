@@ -1,0 +1,30 @@
+4-print_square.txt
+
+    >>> print_square = __import__('4-print_square').print_square
+
+Test 1: normal
+    >>> print_square(7)
+    #######
+    #######
+    #######
+    #######
+    #######
+    #######
+    #######
+
+Test 2: argument type None
+    >>> print_square(None)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Test 3: negative number
+    >>> print_square(-6)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+Test 4: list argument
+    >>> print_square([1, 2, 3])
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+

@@ -1,0 +1,51 @@
+0-add_integer.txt    
+	
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Test 1: two integers 
+    >>> add_integer(2, 4)
+    6
+
+Test 2: positive and negative integers
+    >>> add_integer(100, -2)
+    98
+
+Test 3: integer and string
+    >>> add_integer(4, "Holberton")
+    Traceback (most recent call last):
+	...
+    TypeError: b must be an integer
+
+Test 4: casting string of integers to integer
+    >>> add_integer(int("239"), 0)
+    239
+
+Test 5: float overflow
+    >>> add_integer(float("inf"))
+    Traceback (most recent call last):
+	...
+    OverflowError: cannot convert float infinity to integer
+
+Test 6: no arguments
+	>>> add_integer()
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test 7: 1 argument
+	>>> add_integer(5)
+	103
+
+Test 8: float and negative number
+	>>> add_integer(-2.0)
+	96
+
+Test 9: checks the type
+	>>> type(add_integer(7,9))
+	<class 'int'>
+
+Test 10: argument None
+	>>> add_integer(6, None)
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
