@@ -49,3 +49,9 @@ Test 10: argument None
 	Traceback (most recent call last):
 	...
 	TypeError: b must be an integer
+
+Test 11: float nan
+	>>> add_integer(3, float('nan'))
+	Traceback (most recent call last):
+	...
+	ValueError: cannot convert float NaN to integer
