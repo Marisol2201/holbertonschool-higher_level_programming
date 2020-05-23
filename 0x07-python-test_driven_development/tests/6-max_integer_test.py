@@ -19,7 +19,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_negative_numbers(self):
         """Tests for negative numbers"""
         self.assertEqual(max_integer([2, -5, 4]), 4)
-        
+
     def test_negative_and_float_numbers(self):
         """Tests for negative and float numbers"""
         self.assertEqual(max_integer([2, -5.3, 4.5]), 4.5)
