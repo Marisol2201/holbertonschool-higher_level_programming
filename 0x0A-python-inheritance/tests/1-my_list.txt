@@ -1,0 +1,33 @@
+1-my_list.txt
+
+>>> MyList = __import__('1-my_list').MyList
+
+Test 1: Normal case
+    >>> MyList = __import__('1-my_list').MyList
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.print_sorted()
+    [1, 2, 4]
+
+Test 2: empty list
+    >>> my_list = MyList()
+    >>> my_list.print_sorted()
+    []
+
+Test 3: reversed list 
+    >>> my_list = MyList()
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(1)
+    >>> my_list.print_sorted()
+    [1, 2, 4]
+
+Test 4: negatives
+    >>> my_list = MyList()
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(-1)
+    >>> my_list.print_sorted()
+    [-1, 2, 4]
