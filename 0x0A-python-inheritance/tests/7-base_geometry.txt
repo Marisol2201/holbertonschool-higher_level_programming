@@ -35,6 +35,7 @@ Test 7:
     TypeError: age must be an integer
 
 Test 8:
-    >>> bg.integer_validator()
+    >>> bg.integer_validator("my_int", "Deiwin")
     Traceback (most recent call last):
-    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    TypeError: my_int must be an integer
+
