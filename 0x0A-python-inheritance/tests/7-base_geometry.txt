@@ -13,3 +13,8 @@ Test 3: negative value
 	>>> bg.integer_validator("negative", -3)
 	Traceback (most recent call last):
 	ValueError: negative must be greater than 0
+
+Test 4: check area():
+		>>> bg.area()
+		Traceback (most recent call last):
+		Exception: area() is not implemented
