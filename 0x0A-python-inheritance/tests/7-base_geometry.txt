@@ -9,7 +9,7 @@ Test 1: Normal case
 Test 2: empty string
     >>> bg.integer_validator("", 12)
 
-Test 3: no argument 2
-    >>> bg.integer_validator("hi") # doctest: +ELLIPSIS
-    Traceback (most recent call last):
-    TypeError: ...
+Test 3: negative value
+	>>> bg.integer_validator("negative", -3)
+	Traceback (most recent call last):
+	ValueError: negative must be greater than 0
