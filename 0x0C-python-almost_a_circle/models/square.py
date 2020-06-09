@@ -20,6 +20,8 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """Getter and setter methods for the instance attribute __size
+        Validation of the input is done by the Rectangle superclass update"""
         return self.width
 
     @size.setter
