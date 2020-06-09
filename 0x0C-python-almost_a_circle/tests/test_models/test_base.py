@@ -11,9 +11,15 @@ from models.square import Square
 class TestBase(unittest.TestCase):
     """Testing Base"""
 
-    def SetOut(self):
+    def SetUp(self):
         """factor out set-up code and which the testing framework will
         automatically call for every single test we run"""
+        Base._Base__nb_objects = 0
+        
+    def tearDown(self):
+        """Resets the Base Class for the module
+        method that tidies up after the test method has been run
+        will be run whether the test method succeeded or not"""
         Base._Base__nb_objects = 0
 
     def test_normal_case(self):

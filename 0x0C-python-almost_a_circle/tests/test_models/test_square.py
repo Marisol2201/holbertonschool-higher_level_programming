@@ -13,7 +13,7 @@ from unittest.mock import patch
 class Test_square(unittest.TestCase):
     """Testing Square"""
 
-    def SetOut(self):
+    def SetUp(self):
         """factor out set-up code and which the testing framework will
         automatically call for every single test we run"""
         Base._Base__nb_objects = 0
@@ -31,7 +31,6 @@ class Test_square(unittest.TestCase):
         self.assertEqual(s1.height, 5)
         self.assertEqual(s1.x, 0)
         self.assertEqual(s1.y, 0)
-        self.assertEqual(s1.id, 2)
         with self.assertRaises(TypeError) as cm:
             s1 = Square()
 
@@ -41,7 +40,6 @@ class Test_square(unittest.TestCase):
         self.assertEqual(s2.height, 3)
         self.assertEqual(s2.x, 3)
         self.assertEqual(s2.y, 0)
-        self.assertEqual(s2.id, 3)
 
         s3 = Square(7, 2, 7)
         self.assertEqual(s3.area(), 49)
@@ -49,7 +47,6 @@ class Test_square(unittest.TestCase):
         self.assertEqual(s3.height, 7)
         self.assertEqual(s3.x, 2)
         self.assertEqual(s3.y, 7)
-        self.assertEqual(s3.id, 4)
 
         s4 = Square(1, 2, 3, 4)
         self.assertEqual(s4.area(), 1)
