@@ -19,12 +19,14 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """Returns JSON string representation"""
         if list_dictionaries is None or list_dictionaries is "":
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """Returns JSON string representation"""
         with open(cls.__name__ + ".json", 'w', encoding="UTF-8") as myfile:
             mylist = []
             if list_objs is not None:
@@ -34,12 +36,14 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """Returns JSON strings in list"""
         if json_string is None or json_string is "":
             return []
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
+        """Returns an instance with all attrs already set"""
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
             dummy.update(**dictionary)
@@ -52,6 +56,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """Returns a list of instances"""
         filename = cls.__name__ + ".json"
         if not os.path.exists(filename):
             return []

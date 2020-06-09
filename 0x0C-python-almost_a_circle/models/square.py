@@ -10,6 +10,7 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """Returns formatted information display"""
         return "[Square] ({}) {}/{} - {}".format(
             self.id,
             self.x,
@@ -26,6 +27,7 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
+        """Updates square values"""
         if args is None or not args:
             for key, value in kwargs.items():
                 setattr(self, key, value)
@@ -42,6 +44,7 @@ class Square(Rectangle):
                 self.y = args[4]
 
     def to_dictionary(self):
+        """Returns a dict representation"""
         return {'id': self.id,
                 'size': self.size,
                 'x': self.x,
