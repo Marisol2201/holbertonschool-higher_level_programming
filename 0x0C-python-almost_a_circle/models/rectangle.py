@@ -5,9 +5,10 @@ import sys
 
 
 class Rectangle(Base):
-    """inherits from Base"""
+    """inherits from Base, new rectangle class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Constructor for new class, optional x, y args and id"""
         super().__init__(id)
         self.width = width
         self.height = height

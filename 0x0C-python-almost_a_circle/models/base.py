@@ -11,6 +11,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Constructor of the class, id is optional"""
         if id is not None:
             self.id = id
         else:
@@ -19,14 +20,14 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Returns JSON string representation"""
+        """Returns JSON string representation of list_dictionaries"""
         if list_dictionaries is None or list_dictionaries is "":
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Returns JSON string representation"""
+        """writes the JSON string representation of list_objs to a file"""
         with open(cls.__name__ + ".json", 'w', encoding="UTF-8") as myfile:
             mylist = []
             if list_objs is not None:
@@ -43,7 +44,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Returns an instance with all attrs already set"""
+        """Returns an instance with all attributes already set"""
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
             dummy.update(**dictionary)
@@ -56,7 +57,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Returns a list of instances"""
+        """Returns a list of instances of the called class"""
         filename = cls.__name__ + ".json"
         if not os.path.exists(filename):
             return []
