@@ -3,6 +3,7 @@
 
 
 import unittest
+import pep8
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -17,6 +18,12 @@ class Test_square(unittest.TestCase):
         """factor out set-up code and which the testing framework will
         automatically call for every single test we run"""
         Base._Base__nb_objects = 0
+        
+    def test_square_pep8_conformance(self):
+        """Test that we conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['./models/square.py'])
+        self.assertEqual(result.total_errors, 0)
 
     def test_size_float(self):
         """test if the value is a float"""
