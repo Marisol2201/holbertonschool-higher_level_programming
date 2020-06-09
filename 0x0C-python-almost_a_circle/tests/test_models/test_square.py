@@ -14,13 +14,17 @@ class Test_square(unittest.TestCase):
     """Testing Square"""
 
     def SetOut(self):
+        """factor out set-up code and which the testing framework will
+        automatically call for every single test we run"""
         Base._Base__nb_objects = 0
 
     def test_size_float(self):
+        """test if the value is a float"""
         with self.assertRaises(TypeError):
             Square(2.5, 8, 3, 4)
 
     def test_normal_Square(self):
+        """tests for normal cases"""
         s1 = Square(5)
         self.assertEqual(s1.area(), 25)
         self.assertEqual(s1.width, 5)
@@ -58,6 +62,7 @@ class Test_square(unittest.TestCase):
             s1 = Square(1, 2, 3, 4, 5)
 
     def test_Square_exceptions(self):
+        """test for error, if a value is not int"""
         with self.assertRaises(TypeError) as cm:
             Square("hi", 10, 10, 10)
         self.assertTrue("width must be an integer" in str(cm.exception))
@@ -74,6 +79,7 @@ class Test_square(unittest.TestCase):
             Square(0, 10, 10, 10)
 
     def test_display(self):
+        """tests for the display method"""
         r = Square(1, 1)
         display_example = " #\n"
         with patch('sys.stdout', new=StringIO()) as fakeOutput:

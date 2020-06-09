@@ -12,9 +12,12 @@ class TestBase(unittest.TestCase):
     """Testing Base"""
 
     def SetOut(self):
+        """factor out set-up code and which the testing framework will
+        automatically call for every single test we run"""
         Base._Base__nb_objects = 0
 
     def test_normal_case(self):
+        """normal cases"""
         b1 = Base()
         b2 = Base()
         b3 = Base()
@@ -27,9 +30,11 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b5.id, 4)
 
     def test_zero(self):
+        """zero number test"""
         b1 = Base(0)
         self.assertEqual(b1.id, 0)
 
     def test_negatives(self):
+        """negative numbers test"""
         b1 = Base(-5)
         self.assertEqual(b1.id, -5)
