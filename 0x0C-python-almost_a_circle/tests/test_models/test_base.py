@@ -50,3 +50,10 @@ class TestBase(unittest.TestCase):
         """negative numbers test"""
         b1 = Base(-5)
         self.assertEqual(b1.id, -5)
+        
+    def test_to_and_from_json_string_square(self):
+        """ Test to_and_from_json_string"""
+        r1 = Square(6, 6, 6)
+        dictionary = r1.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        self.assertIsInstance(json_dictionary, str)
