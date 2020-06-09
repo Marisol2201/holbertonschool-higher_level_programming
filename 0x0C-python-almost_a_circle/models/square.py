@@ -34,17 +34,11 @@ class Square(Rectangle):
         if args is None or not args:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-        elif len(args) > 0:
-            if args[0] is not None:
-                self.id = args[0]
-            if len(args) > 1:
-                self.width = args[1]
-            if len(args) > 2:
-                self.height = args[2]
-            if len(args) > 3:
-                self.x = args[3]
-            if len(args) > 4:
-                self.y = args[4]
+        else:
+            valid_args = args[:4]
+            args_list = ['id', 'size', 'x', 'y']
+            for index in range(len(valid_args)):
+                setattr(self, args_list[index], valid_args[index])
 
     def to_dictionary(self):
         """Returns a dict representation"""
