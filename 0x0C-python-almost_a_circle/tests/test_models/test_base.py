@@ -3,6 +3,7 @@
 
 
 import unittest
+import pep8
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -21,6 +22,11 @@ class TestBase(unittest.TestCase):
         method that tidies up after the test method has been run
         will be run whether the test method succeeded or not"""
         Base._Base__nb_objects = 0
+        
+    def test_rectangle_pep8_conformance(self):
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['./models/base.py'])
+        self.assertEqual(result.total_errors, 0)
 
     def test_normal_case(self):
         """normal cases"""
