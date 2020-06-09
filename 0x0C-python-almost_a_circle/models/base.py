@@ -64,7 +64,7 @@ class Base:
         with open(filename, mode="r", encoding="utf-8") as f:
             content_file = cls.from_json_string(f.read())
         return [cls.create(**dic) for dic in content_file]
-    
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Saves to csv file"""
@@ -73,7 +73,7 @@ class Base:
             write_to = csv.DictWriter(save_file, res[0].keys())
             write_to.writeheader()
             write_to.writerows(res)
-            
+
     @classmethod
     def load_from_file_csv(cls):
         """Loads from csv file"""
