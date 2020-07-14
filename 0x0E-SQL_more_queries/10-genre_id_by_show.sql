@@ -1,4 +1,7 @@
 -- Import the database dump from hbtn_0d_tvshows to your MySQL server
+-- 0)echo "CREATE DATABASE hbtn_0d_tvshows;" | mysql -uroot -p (it was at the begining of the project)
+-- 1) bring the file to the repo
+-- 2) mysql -u root -p hbtn_0d_tvshows < hbtn_0d_tvshows.sql (it was in the documentation)
 
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows
