@@ -18,13 +18,14 @@ if __name__ == '__main__':
     # create a Cursor object. It will let you execute all the queries you need
     cur = dbconf.cursor()
 
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT * FROM states \
+                 WHERE name LIKE BINARY '{}' \
+                 ORDER BY states.id".format(sys.argv[4]))
 
     states = cur.fetchall()
 
     for state in states:
-        if state[1] == sys.argv[4]:
-            print(state)
+        print(state)
 
     # disconnect from server
     cur.close()
