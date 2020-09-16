@@ -4,3 +4,5 @@ __pycache__
 /0x0F-python-object_relational_mapping/*.sql
 *.log
 *.~
+*csv
+*.c
