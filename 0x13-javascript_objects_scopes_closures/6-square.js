@@ -5,7 +5,7 @@ module.exports = class Square extends Sqr {
     if (c === undefined) super.print();
     else {
       for (let i = 0; i < this.height; i++) {
-        console.log('c'.repeat(this.width));
+        console.log('C'.repeat(this.width));
       }
     }
   }
