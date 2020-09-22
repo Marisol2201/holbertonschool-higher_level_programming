@@ -1,6 +1,6 @@
 #!/usr/bin/node
-let request = require('request');
-let taskcounter = {};
+const request = require('request');
+const taskcounter = {};
 let user;
 
 request(process.argv[2], function (err, request, body) {
