@@ -5,10 +5,10 @@ request.get(process.argv[2], function (err, data, body) {
     console.log(err);
   } else {
     let count = 0;
-    let movies = JSON.parse(body).results;
-    for (let movie in movies) {
-      let characters = movies[movie].characters;
-      for (let charctr in characters) {
+    const movies = JSON.parse(body).results;
+    for (const movie in movies) {
+      const characters = movies[movie].characters;
+      for (const charctr in characters) {
         if (characters[charctr].includes('18')) {
           count++;
         }
