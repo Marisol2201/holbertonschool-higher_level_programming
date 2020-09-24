@@ -7,3 +7,6 @@ __pycache__
 *csv
 *.c
 node_modules
+*.json
+*.pyc
+nodesource_setup.sh
