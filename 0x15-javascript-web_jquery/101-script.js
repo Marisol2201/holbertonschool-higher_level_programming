@@ -1,1 +1,11 @@
-#!/usr/bin/node
+$(document).ready(function () {
+  $('DIV#add_item').on('click', function () {
+    $('UL.my_list').append($('<li></li>').text('Item'));
+  });
+  $('DIV#remove_item').on('click', function () {
+    $('UL.my_list li:last-child').remove();
+  });
+  $('DIV#clear_list').on('click', function () {
+    $('UL.my_list').empty();
+  });
+});
